@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import RecommendedFriends from './components/RecommendedFriends.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(){
+    super();
+    this.friendList = [
+      {name:'Trần Đốt', commonFriend: 10},
+      {name:'Tống Phong', commonFriend: 20},
+      {name:'Ngọa Long', commonFriend: 30},
+    ];
+  }
+  render() {
+    return (
+      <div className="App">
+        <RecommendedFriends friends = {this.friendList}/> 
+      </div>
+    );
+  }
 }
 
 export default App;
